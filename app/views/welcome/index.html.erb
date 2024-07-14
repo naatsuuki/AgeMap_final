@@ -104,6 +104,19 @@
 
       $('#clearForm').click(function() {
         $('#ageComparisonForm')[0].reset(); // フォームの内容をクリア
+        $('#comparisonUserFields').html(`
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="comparisonName">比較したい人の名前</label>
+              <input type="text" class="form-control" name="comparisonName[]" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="comparisonBirthYear">比較したい人の生まれ年</label>
+              <input type="number" class="form-control" name="comparisonBirthYear[]" required>
+            </div>
+          </div>
+        `);
+        
         $('#tableHeaders').html(`
           <th>西暦</th>
           <th>あなたの名前</th>
